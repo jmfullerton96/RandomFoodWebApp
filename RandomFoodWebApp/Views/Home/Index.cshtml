@@ -1,17 +1,18 @@
-﻿@model RandomFoodWebApp.Models.Restaraunt
+﻿@model IEnumerable<RandomFoodWebApp.Models.Restaurant>
 
 <h1>RandomFoodWebApp</h1>
 
-<form method="post">
+@using (Html.BeginForm("GetRestaraunt", "Home", FormMethod.Get, new { id = "Config" }))
+{
     <div class="form-group"> <!--form-group shouldn't exist yet-->
         <label for="radius">Radius willing to travel: </label>
-        <input name="radius" id="radius" type="text" placeholder="5" />
+        <input name="radius" id="radius" type="text" value="5" />
     </div>
     <div class="form-group">
-        <input type="submit" value="You pick!" />
+        <input type="submit" value="You pick!"/>
         <!--<button type="submit">Find me somewhere to eat!</button>-->
     </div>
-</form>
+}
+
 <div class="row">
-    
 </div>
